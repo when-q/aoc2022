@@ -1,4 +1,1 @@
-import AOC
-
-def main : IO Unit :=
-  IO.println s!"Hello, {hello}!"
+import aoc2022

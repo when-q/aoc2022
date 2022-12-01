@@ -1,18 +1,18 @@
 import Lake
 open Lake DSL
 
-package «aoc2022»{
+package «AdventOfCode»{
   -- add package configuration options here
 }
 
-lean_lib aoc2022{
+lean_lib AdventOfCode{
   -- add library configuration options here
   
 }
 
 @[default_target]
-lean_exe «aoc» {
-  root := `AOC
+lean_exe «aoc2022» {
+  root := `AdventOfCode
   supportInterpreter := true
 }
 require mathlib from git
