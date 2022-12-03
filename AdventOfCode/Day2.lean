@@ -1,4 +1,4 @@
-import Mathlib.Data.Array.Basic
+import Mathlib
 def single_turn (part1: Bool) (p : Int × Int) : Int :=
 
   let o := p.fst
@@ -32,11 +32,11 @@ def composed_parse (input : Array String) : List (Int × Int) :=
   let flist := (List.transpose (parse_format (input.toList)))
   List.zip flist[0]! flist[1]!
 
-def main  : IO PUnit :=
+def day2: IO PUnit :=
 do let input ← IO.FS.lines "Inputs/Day2.txt"
    IO.print $  ((composed_parse input).map (single_turn true)).foldr HAdd.hAdd 0
    IO.print "\n"
    IO.print $ ((composed_parse input).map (single_turn false)).foldr HAdd.hAdd 0
    IO.print "\n"
 
-#eval main
+#eval day2

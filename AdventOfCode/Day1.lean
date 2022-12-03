@@ -23,11 +23,11 @@ def getMaxThree (l :List Int) : Int :=
   | a :: b :: c :: _ => a + b + c
   | _ => 0
 
-def main  : IO PUnit :=
+def day1: IO PUnit :=
 do let input ← IO.FS.lines "Inputs/Day1.txt"
    IO.print $ (getMax (format (input.toList.map String.toInt!) 0 ) 0)
    IO.print "\n"
    IO.print $ (getMaxThree (format (input.toList.map String.toInt!) 0 ))
    IO.print "\n"
 
-#eval main
+#eval day1
