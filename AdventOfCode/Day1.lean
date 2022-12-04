@@ -1,5 +1,6 @@
 import Mathlib.Data.Array.Basic
 
+namespace Day1
 def format (l : List Int) (i : Int) : List Int :=
 match l with 
 | [] => [i]
@@ -31,3 +32,4 @@ do let input ← IO.FS.lines "Inputs/Day1.txt"
    IO.print "\n"
 
 #eval day1
+end Day1

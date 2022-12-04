@@ -1,6 +1,7 @@
-import Mathlib
 import AdventOfCode.Utils.macro
+import Mathlib.Data.List.Basic
 
+namespace Day4
 def part1_solution : List (List (ℕ × ℕ)) → ℕ
 | [(x, y), (z, w)] :: xs =>
   if (x ≤ z ∧ y ≥ w) ∨ (z ≤ x ∧ w ≥ y) then
@@ -34,3 +35,4 @@ do let input ← IO.FS.lines "Inputs/Day4.txt"
    IO.print "\n"
 
 #eval day4
+end Day4

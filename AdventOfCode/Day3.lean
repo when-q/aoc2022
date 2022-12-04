@@ -1,8 +1,6 @@
-import Mathlib
 import AdventOfCode.Utils.macro
-
-#eval [(x, y) | for x in [1,2,3], for y in [3,1,4], if x != y]
--- [(1, 3), (1, 4), (2, 3), (2, 1), (2, 4), (3, 1), (3, 4)]
+import Mathlib.Data.List.Basic
+namespace Day3
 def score: Char → Int
 | x =>
   if x.toNat >= 97 then
@@ -53,12 +51,13 @@ def part2_sol : List (List Char) → Int
 | x :: y :: z :: xs => part2_grouping x y z + part2_sol xs
 | _ => 0
 
-
-
 def day3: IO PUnit :=
 do let input ← IO.FS.lines "Inputs/Day3.txt"
    IO.print $ (input.toList |> format |> part1_sol)
    IO.print "\n"
    IO.print $ (part2_sol (input.toList |> part2_format ))
    IO.print "\n"
+
 #eval day3
+
+end Day3
